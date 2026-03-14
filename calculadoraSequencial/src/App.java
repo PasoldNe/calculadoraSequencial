@@ -5,8 +5,8 @@ public class App {
     public static void main(String[] args) throws Exception {
         Scanner scan = new Scanner(System.in);
 
-        float[] num = {};
-        String[] operador = {}; 
+        float[] num = new float[15];
+        String[] operador = new String[14]; 
         float resultado = 0;
 
         System.out.println("Agora calcularemos varios numeros um atras do outro :0");
