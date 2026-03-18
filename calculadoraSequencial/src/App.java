@@ -27,6 +27,16 @@ public class App {
                 return;
             }
         }*/
-        
+        while (continuar) {
+            System.out.println("\n\nDigite o " + contador + "º numero desejado");
+            num[contador] = scan.nextFloat();
+            System.out.println("Digite o operador (+, -, *, /)");
+            operador[contador] = scan.next();
+
+            if(operador[contador].equals("f") || operador[contador].equals("F")){
+                continuar = false;
+            }
+            
+        }
     }
 }
