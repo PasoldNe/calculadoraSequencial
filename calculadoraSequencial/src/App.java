@@ -1,5 +1,4 @@
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -7,7 +6,9 @@ public class App {
 
         float[] num = new float[15];
         String[] operador = new String[14]; 
-        float resultado = 0;
+        float parcial = 0;
+        float coeficiente = 0;
+        float resultado = -5; //pra saber se puxa certo
         boolean continuar = true;
         int contador = 0;
 
@@ -28,16 +29,38 @@ public class App {
             }
         }*/
         while (continuar) {
-            System.out.println("\n\nDigite o " + contador + "º numero desejado");
-            num[contador] = scan.nextFloat();
+            System.out.println("\n\nDigite o " + contador + "º numero desejado");num[contador] = scan.nextFloat();
+
             System.out.println("Digite o operador (+, -, *, /)");
             operador[contador] = scan.next();
+
 
             if(operador[contador].equals("f") || operador[contador].equals("F")){
                 continuar = false;
             }
-            
+            contador += 1;
         }
         
+        for(int i = 0 ; contador >= i ; i++){
+            if (contador == 0 ) {
+                parcial = num[0];
+            }
+
+            coeficiente = num[contador];
+
+            int contadorOperador = contador-1;
+
+            switch (operador[contadorOperador]) {
+                case "+":
+                    Adicao contaAdicao = new Adicao();
+                    contaAdicao.setNumero(parcial, coeficiente);
+                    parcial = contaAdicao.getAdicao();
+                    System.out.println(parcial);
+                    break;
+            
+                default:
+                    break;
+            }
+        }
     }
 }
