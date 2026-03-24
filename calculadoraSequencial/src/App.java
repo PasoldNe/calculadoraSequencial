@@ -42,25 +42,7 @@ public class App {
         }
         
         for(int i = 0 ; contador >= i ; i++){
-            if (contador == 0 ) {
-                parcial = num[0];
-            }
-
-            coeficiente = num[contador];
-
-            int contadorOperador = contador-1;
-
-            switch (operador[contadorOperador]) {
-                case "+":
-                    Adicao contaAdicao = new Adicao();
-                    contaAdicao.setNumero(parcial, coeficiente);
-                    parcial = contaAdicao.getAdicao();
-                    System.out.println(parcial);
-                    break;
             
-                default:
-                    break;
-            }
         }
     }
 }
