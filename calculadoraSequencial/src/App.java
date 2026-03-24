@@ -5,7 +5,7 @@ public class App {
         Scanner scan = new Scanner(System.in);
 
         float[] num = new float[15];
-        String[] operador = new String[14]; 
+        String[] operador = new String[15]; 
         float parcial = 0;
         float coeficiente = 0;
         float resultado = -5; //pra saber se puxa certo
@@ -35,14 +35,26 @@ public class App {
             operador[contador] = scan.next();
 
 
-            if(operador[contador].equals("f") || operador[contador].equals("F")){
+            if(operador[contador].equals("=")){
                 continuar = false;
             }
             contador += 1;
         }
         
         for(int i = 0 ; contador >= i ; i++){
+            if (i == 0){
+                parcial = num[i];
+            } else if (i <= contador) {
+                coeficiente = num[i];
+            } 
+            switch (operador) {
+                case "+":
+                    
+                    break;
             
+                default:
+                    break;
+            }
         }
     }
 }
