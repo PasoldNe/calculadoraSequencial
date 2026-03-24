@@ -41,19 +41,42 @@ public class App {
             contador += 1;
         }
         
-        for(int i = 0 ; contador >= i ; i++){
+        for(int i = 0 ; i <= contador ; i++){
             if (i == 0){
                 parcial = num[i];
             } else if (i <= contador) {
                 coeficiente = num[i];
             } 
-            switch (operador) {
+
+            switch (operador[i]) {
                 case "+":
-                    
+                    Adicao adicao = new Adicao();
+                    adicao.setNumero(parcial, coeficiente);
+                    parcial = adicao.getAdicao();
+                    break;
+                case "-":
+                    Subtracao subtracao = new Subtracao();
+                    subtracao.setNumero(parcial, coeficiente);
+                    parcial = subtracao.getSubtracao();
+                    break;
+                case "/":
+                    Divisao divisao = new Divisao();
+                    divisao.setNumero(parcial, coeficiente);
+                    parcial = divisao.getDivisao();
+                    break;
+                case "*":
+                    Multiplicacao multiplicao = new Multiplicacao();
+                    multiplicao.setNumero(parcial, coeficiente);
+                    parcial = multiplicao.getMultiplicacao();
                     break;
             
                 default:
+                    System.out.println("Algum operador foi inserido errado X/\nInsira tudo novamente");
                     break;
+            }
+
+            if (i == contador) {
+                resultado = parcial;
             }
         }
     }
