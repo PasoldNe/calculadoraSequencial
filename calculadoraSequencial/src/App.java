@@ -44,11 +44,11 @@ public class App {
         for(int i = 0 ; i <= contador ; i++){
             if (i == 0){
                 parcial = num[i];
-            } else if (i <= contador) {
+            } else {
                 coeficiente = num[i];
             } 
 
-            switch (operador[i]) {
+            switch (operador[i-1]) {
                 case "+":
                     Adicao adicao = new Adicao();
                     adicao.setNumero(parcial, coeficiente);
@@ -73,10 +73,6 @@ public class App {
                 default:
                     System.out.println("Algum operador foi inserido errado X/\nInsira tudo novamente");
                     break;
-            }
-
-            if (i == contador) {
-                resultado = parcial;
             }
         }
     }
