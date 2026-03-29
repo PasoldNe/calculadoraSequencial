@@ -37,11 +37,15 @@ public class App {
 
             if(operador[contador].equals("=")){
                 continuar = false;
+            } else {
+                contador += 1;
             }
-            contador += 1;
         }
         
-        for(int i = 0 ; i < contador; i++){
+        System.out.println("contador : " + contador);
+
+        for(int i = 0 ; i <= contador; i++){
+            System.out.println("contador : " + contador);
             if (i == 0){
                 parcial = num[i];
             } else {
@@ -49,6 +53,7 @@ public class App {
 
                 switch (operador[i-1]) {
                     case "+":
+                        System.out.println("DEBUG: Entrei na Soma!");
                         Adicao adicao = new Adicao();
                         adicao.setNumero(parcial, coeficiente);
                         parcial = adicao.getAdicao();

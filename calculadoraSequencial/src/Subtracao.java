@@ -2,7 +2,7 @@ public class Subtracao {
     float parcial;
     float coeficiente;
 
-    public void setNumero(float parcial, float coficiente){
+    public void setNumero(float parcial, float coeficiente){
         this.parcial=parcial;
         this.coeficiente=coeficiente;
     }
